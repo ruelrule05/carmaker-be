@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\CarTypeController;
 use App\Http\Controllers\ColorController;
 use App\Http\Controllers\ManufacturerController;
@@ -21,6 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::resource('cars', CarController::class)->except(['create', 'edit']);
 Route::resource('colors', ColorController::class)->except(['create', 'edit']);
 Route::resource('car-types', CarTypeController::class)->except(['create', 'edit']);
 Route::resource('manufacturers', ManufacturerController::class)->except(['create', 'edit']);

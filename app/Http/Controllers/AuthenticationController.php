@@ -20,7 +20,7 @@ class AuthenticationController extends Controller
             return response()->json([
                 'success'   =>  false,
                 'message'   =>  'Invalid credentials.'
-            ], 422);
+            ]);
         }
 
         if (Hash::check($request->password, $user->password))
@@ -36,7 +36,7 @@ class AuthenticationController extends Controller
             return response()->json([
                 'success'   =>  false,
                 'message'   =>  'Invalid credentials.'
-            ], 422);
+            ]);
         }
     }
 

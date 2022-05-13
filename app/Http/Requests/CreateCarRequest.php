@@ -30,4 +30,12 @@ class CreateCarRequest extends FormRequest
             'car_type_id'       =>  ['required', 'exists:car_types,id']
         ];
     }
+
+    public function attributes() {
+        return [
+            'manufacturer_id'   =>  'manufacturer',
+            'color_id'          =>  'color',
+            'car_type_id'       =>  'car type'
+        ];
+    }
 }
